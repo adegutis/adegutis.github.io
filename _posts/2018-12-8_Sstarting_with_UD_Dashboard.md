@@ -243,7 +243,7 @@ if ($Name -eq 'SQL LUN' -or $Name -eq 'All') {
         ChartOptions = [pscustomobject]@{Legend = $True; RefreshRate = 300; Stacked = $True}
         Color        = 'Yellow'
         Label        = '90-94%'
-        Value        = ($LunResults | Where-Object {$_.PercentFree -ge 5 -and $_.CPU -lt 11}).count
+        Value        = ($LunResults | Where-Object {$_.PercentFree -ge 5 -and $_.PercentFree -lt 11}).count
         Value2       = $Null
     }
     $Results += [pscustomobject]@{
@@ -252,7 +252,7 @@ if ($Name -eq 'SQL LUN' -or $Name -eq 'All') {
         ChartOptions = [pscustomobject]@{Legend = $True; RefreshRate = 300; Stacked = $True}
         Color        = 'LightGreen'
         Label        = '80-89%'
-        Value        = ($LunResults | Where-Object {$_.PercentFree -ge 11 -and $_.CPU -lt 21}).count
+        Value        = ($LunResults | Where-Object {$_.PercentFree -ge 11 -and $_.PercentFree -lt 21}).count
         Value2       = $Null
     }
     $Results += [pscustomobject]@{
