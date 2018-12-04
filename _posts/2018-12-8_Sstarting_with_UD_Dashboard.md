@@ -385,12 +385,12 @@ if ($Name -eq 'SQL LUN' -or $Name -eq 'All') {
             },
             "2": {
                 "Color": "Yellow",
-                "Condition": "($LunResults | Where-Object {$_.PercentFree -ge 5 -and $_.CPU -lt 11}).count",
+                "Condition": "($LunResults | Where-Object {$_.PercentFree -ge 5 -and $_.PercentFree -lt 11}).count",
                 "Label": "90-94%"
             },
             "3": {
                 "Color": "LightGreen",
-                "Condition": "($LunResults | Where-Object {$_.PercentFree -ge 11 -and $_.CPU -lt 21}).count",
+                "Condition": "($LunResults | Where-Object {$_.PercentFree -ge 11 -and $_.PercentFree -lt 21}).count",
                 "Label": "80-89%"
             },
             "4": {
