@@ -1,27 +1,21 @@
-<head>
-  <meta http-equiv="Refresh" content="0; url='https://photos.app.goo.gl/7s8NdXBk862AfiNY9'" />
-</head>
-<body>
-  Redirecting to Degutis Christmas 2021
-</body>
-
-<!--
----
-layout: default
----
-
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
--->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slideshow Example</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+  </head>
+  <body>
+    <div class="slideshow">
+      <div><img src="photos/photo1.jpg"></div>
+      <div><img src="photos//photo2.jpg"></div>
+      <div><img src="photos//photo3.jpg"></div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.slideshow').slick();
+      });
+    </script>
+  </body>
+</html>
