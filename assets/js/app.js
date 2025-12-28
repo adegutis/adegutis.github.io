@@ -1,134 +1,88 @@
 const CONFIG = {
-    slideDuration: 5000, // Time per slide in ms
     jsonPath: 'assets/images.json',
-    picturesPath: 'pictures/'
+    thumbPath: 'assets/images/thumbnails/',
+    fullPath: 'assets/images/full/'
 };
 
-const state = {
-    currentSlide: 0,
-    isPlaying: true,
-    images: [],
-    timer: null
-};
-
-// DOM Elements
-const slideshowContainer = document.getElementById('slideshow');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const toggleBtn = document.getElementById('toggleBtn');
-const playIcon = document.getElementById('playIcon');
-const pauseIcon = document.getElementById('pauseIcon');
+const galleryContainer = document.getElementById('gallery');
 
 async function init() {
     try {
         const response = await fetch(CONFIG.jsonPath);
         if (!response.ok) throw new Error('Failed to load image list');
-        state.images = await response.json();
-        
-        if (state.images.length === 0) {
+        const images = await response.json();
+
+        if (images.length === 0) {
             console.warn('No images found in JSON list.');
             return;
         }
 
-        renderSlides();
-        showSlide(0);
-        startTimer();
+        renderGallery(images);
 
     } catch (error) {
-        console.error('Error initializing slideshow:', error);
-        slideshowContainer.innerHTML = '<p style="color:white; text-align:center; padding-top:20%;">Failed to load gallery.</p>';
+        console.error('Error initializing gallery:', error);
+        galleryContainer.innerHTML = '<p style="text-align:center; padding-top:20%;">Failed to load gallery.</p>';
     }
 }
 
-function renderSlides() {
-    slideshowContainer.innerHTML = '';
-    state.images.forEach((imgName, index) => {
+function renderGallery(images) {
+    galleryContainer.innerHTML = '';
+    images.forEach((imgName, index) => {
         const div = document.createElement('div');
-        div.classList.add('slide');
-        // Preload only the first image immediately, lazy load others if needed, 
-        // but for a slideshow it's better to just set bg image.
-        // We use encodeURI to handle spaces in filenames.
-        div.style.backgroundImage = `url('${CONFIG.picturesPath}${encodeURI(imgName)}')`;
-        slideshowContainer.appendChild(div);
+        div.classList.add('gallery-item');
+        // Stagger animation delay slightly for nice effect
+        div.style.animationDelay = `${index * 50}ms`;
+
+        const img = document.createElement('img');
+        // Use thumbnail path for grid
+        img.src = `${CONFIG.thumbPath}${encodeURI(imgName)}`;
+        img.alt = imgName;
+        img.loading = "lazy";
+
+        // Add click event for lightbox using full path
+        img.addEventListener('click', () => {
+            openLightbox(`${CONFIG.fullPath}${encodeURI(imgName)}`);
+        });
+
+        div.appendChild(img);
+        galleryContainer.appendChild(div);
     });
 }
 
-function showSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    if (slides.length === 0) return;
+// Lightbox Logic
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('close-lightbox');
 
-    // Wrap around
-    if (index >= slides.length) index = 0;
-    if (index < 0) index = slides.length - 1;
-
-    // Remove active class from all
-    slides.forEach(slide => slide.classList.remove('active'));
-
-    // Add active class to current
-    slides[index].classList.add('active');
-
-    state.currentSlide = index;
+function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.remove('hidden');
+    // Force reflow
+    void lightbox.offsetWidth;
+    lightbox.classList.add('active');
 }
 
-function nextSlide() {
-    showSlide(state.currentSlide + 1);
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    setTimeout(() => {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+    }, 300); // Wait for transition
 }
 
-function prevSlide() {
-    showSlide(state.currentSlide - 1);
-    resetTimer(); // Reset timer on manual interaction
-}
+closeBtn.addEventListener('click', closeLightbox);
 
-function startTimer() {
-    if (state.timer) clearInterval(state.timer);
-    if (state.isPlaying) {
-        state.timer = setInterval(nextSlide, CONFIG.slideDuration);
+// Close on background click
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
     }
-}
-
-function resetTimer() {
-    if (state.isPlaying) {
-        startTimer();
-    }
-}
-
-function togglePlay() {
-    state.isPlaying = !state.isPlaying;
-    
-    if (state.isPlaying) {
-        playIcon.classList.add('hidden');
-        pauseIcon.classList.remove('hidden');
-        startTimer();
-        toggleBtn.setAttribute('aria-label', 'Pause Slideshow');
-    } else {
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-        clearInterval(state.timer);
-        toggleBtn.setAttribute('aria-label', 'Play Slideshow');
-    }
-}
-
-// Event Listeners
-prevBtn.addEventListener('click', prevSlide);
-
-nextBtn.addEventListener('click', () => {
-    nextSlide();
-    resetTimer();
 });
-toggleBtn.addEventListener('click', togglePlay);
 
-// specific Keyboard support
+// Close on Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') {
-        nextSlide();
-        resetTimer();
-    }
-    if (e.key === 'ArrowLeft') {
-        prevSlide();
-        resetTimer();
-    }
-    if (e.key === ' ') {
-        togglePlay();
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
     }
 });
 
