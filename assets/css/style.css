@@ -4,8 +4,10 @@
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-blur: 10px;
-    --transition-speed: 1.5s; /* Crossfade duration */
-    --zoom-duration: 20s; /* Ken Burns duration */
+    --transition-speed: 1.5s;
+    /* Crossfade duration */
+    --zoom-duration: 20s;
+    /* Ken Burns duration */
 }
 
 * {
@@ -18,7 +20,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* Prevent scrollbars during transitions */
+    overflow: hidden;
+    /* Prevent scrollbars during transitions */
     height: 100vh;
     width: 100vw;
 }
@@ -56,8 +59,13 @@ body {
 }
 
 @keyframes kenBurns {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 /* Overlay UI */
@@ -68,10 +76,14 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
-    pointer-events: none; /* Let clicks pass through to background if needed, but we capture on controls */
+    pointer-events: none;
+    /* Let clicks pass through to background if needed, but we capture on controls */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    /* Push controls to bottom */
+    align-items: center;
+    /* Center horizontally */
     padding: 2rem;
 }
 
@@ -87,21 +99,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 500;
-    font-size: 2rem;
-    letter-spacing: -0.02em;
-}
-
-header p {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-top: 0.25rem;
-}
-
 .controls {
-    align-self: center;
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -139,9 +137,11 @@ button:active {
     header h1 {
         font-size: 1.5rem;
     }
+
     .controls {
         padding: 1rem 1.5rem;
     }
+
     .overlay {
         padding: 1rem;
     }
