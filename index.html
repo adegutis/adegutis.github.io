@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moments</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
         rel="stylesheet">
+
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="assets/css/lightbox.css">
 </head>
 
 <body>
@@ -28,7 +33,9 @@
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox hidden">
         <span id="close-lightbox" class="close">&times;</span>
+        <button id="prev-btn" class="nav-btn prev" aria-label="Previous image">&#10094;</button>
         <img id="lightbox-img" class="lightbox-content" src="" alt="Full screen view">
+        <button id="next-btn" class="nav-btn next" aria-label="Next image">&#10095;</button>
     </div>
 
     <script src="assets/js/app.js"></script>
