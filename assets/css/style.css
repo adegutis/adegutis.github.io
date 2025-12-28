@@ -75,7 +75,9 @@ body {
     body {
         padding: 1rem;
     }
-}/* Lightbox */
+}
+
+/* Lightbox */
 .lightbox {
     position: fixed;
     z-index: 1000;
@@ -127,4 +129,47 @@ body {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Header Styles */
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.header-content {
+    text-align: center;
+    max-width: 1200px;
+    padding: 2rem 3rem;
+}
+
+.header-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        padding: 1.5rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.2rem;
+    }
 }
