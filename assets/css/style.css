@@ -1,7 +1,9 @@
 :root {
-    --bg-color: #0f0f11;
-    --text-color: #ffffff;
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
     --gap: 16px;
+    --font-ui: 'Montserrat', sans-serif;
+    --font-quote: 'Playfair Display', serif;
 }
 
 * {
@@ -13,7 +15,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-ui);
     min-height: 100vh;
     width: 100vw;
     padding: 2rem;
@@ -51,7 +53,20 @@ body {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.02);
+    transform: scale(1.05);
+}
+
+/* Dim other items on hover (if device supports hover) */
+@media (hover: hover) {
+    .gallery:hover .gallery-item:not(:hover) {
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        opacity: 1;
+        z-index: 2;
+    }
 }
 
 @keyframes fadeIn {
@@ -131,6 +146,42 @@ body {
     cursor: pointer;
 }
 
+/* Lightbox Navigation */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 1rem;
+    z-index: 1002;
+    transition: color 0.2s, transform 0.2s;
+    user-select: none;
+}
+
+.nav-btn:hover {
+    color: #bbb;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media (max-width: 600px) {
+    .nav-btn {
+        font-size: 2rem;
+        padding: 0 0.5rem;
+    }
+}
+
 /* Header Styles */
 .site-header {
     width: 100%;
@@ -144,20 +195,25 @@ body {
     text-align: center;
     max-width: 1200px;
     padding: 2rem 3rem;
+    min-height: 140px;
+    /* Prevent layout shift */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header-content h1 {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 300;
-    font-size: 1.5rem;
+    font-family: var(--font-quote);
+    font-weight: 400;
+    font-size: 1.8rem;
     line-height: 1.4;
     font-style: italic;
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .header-content p {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-ui);
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;

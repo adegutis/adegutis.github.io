@@ -29,7 +29,9 @@ async function init() {
 }
 
 function renderGallery(images) {
+    galleryImages = images; // Save for lightbox navigation
     galleryContainer.innerHTML = '';
+
     images.forEach((imgName, index) => {
         const div = document.createElement('div');
         div.classList.add('gallery-item');
@@ -42,9 +44,9 @@ function renderGallery(images) {
         img.alt = imgName;
         img.loading = "lazy";
 
-        // Add click event for lightbox using full path
+        // Add click event for lightbox with index
         img.addEventListener('click', () => {
-            openLightbox(`${CONFIG.fullPath}${encodeURI(imgName)}`);
+            openLightbox(index);
         });
 
         div.appendChild(img);
@@ -56,13 +58,28 @@ function renderGallery(images) {
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.getElementById('close-lightbox');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
 
-function openLightbox(src) {
-    lightboxImg.src = src;
+let currentImageIndex = 0;
+let galleryImages = [];
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightboxImage();
     lightbox.classList.remove('hidden');
     // Force reflow
     void lightbox.offsetWidth;
     lightbox.classList.add('active');
+}
+
+function updateLightboxImage() {
+    // Loop around
+    if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+    if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+
+    const imgName = galleryImages[currentImageIndex];
+    lightboxImg.src = `${CONFIG.fullPath}${encodeURI(imgName)}`;
 }
 
 function closeLightbox() {
@@ -73,7 +90,26 @@ function closeLightbox() {
     }, 300); // Wait for transition
 }
 
+function showNext() {
+    currentImageIndex++;
+    updateLightboxImage();
+}
+
+function showPrev() {
+    currentImageIndex--;
+    updateLightboxImage();
+}
+
+// Event Listeners
 closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent closing
+    showNext();
+});
+prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrev();
+});
 
 // Close on background click
 lightbox.addEventListener('click', (e) => {
@@ -82,13 +118,33 @@ lightbox.addEventListener('click', (e) => {
     }
 });
 
-// Close on Escape key
-// Close on Escape key
+// Keyboard Navigation
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        closeLightbox();
-    }
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
 });
+
+// Swipe Support (Touch)
+let touchStartX = 0;
+let touchEndX = 0;
+
+lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const threshold = 50; // Min distance
+    if (touchEndX < touchStartX - threshold) showNext(); // Left swipe
+    if (touchEndX > touchStartX + threshold) showPrev(); // Right swipe
+}
 
 // Quotes Logic
 const quotes = [
