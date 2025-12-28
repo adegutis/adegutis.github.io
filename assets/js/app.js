@@ -5,6 +5,8 @@ const CONFIG = {
 };
 
 const galleryContainer = document.getElementById('gallery');
+const searchInput = document.getElementById('search-input');
+let allImages = []; // Store all images for filtering
 
 async function init() {
     try {
@@ -20,7 +22,13 @@ async function init() {
         // Randomize order
         shuffleArray(images);
 
+        // Store for filtering
+        allImages = images;
+
         renderGallery(images);
+
+        // Setup search
+        setupSearch();
 
     } catch (error) {
         console.error('Error initializing gallery:', error);
@@ -186,6 +194,37 @@ function displayRandomQuote() {
         const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
         quoteElement.innerText = `"${randomQuote.text}"`;
         authorElement.innerText = `— ${randomQuote.author}`;
+    }
+}
+
+// Search/Filter Logic
+function setupSearch() {
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            filterGallery(e.target.value);
+        }, 300);
+    });
+}
+
+function filterGallery(searchTerm) {
+    const term = searchTerm.toLowerCase().trim();
+
+    if (!term) {
+        renderGallery(allImages);
+        return;
+    }
+
+    const filtered = allImages.filter(img =>
+        img.description && img.description.toLowerCase().includes(term)
+    );
+
+    if (filtered.length === 0) {
+        galleryContainer.innerHTML = '<p class="no-results">No photos match your search.</p>';
+        galleryImages = [];
+    } else {
+        renderGallery(filtered);
     }
 }
 
