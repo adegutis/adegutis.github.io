@@ -32,7 +32,7 @@ function renderGallery(images) {
     galleryImages = images; // Save for lightbox navigation
     galleryContainer.innerHTML = '';
 
-    images.forEach((imgName, index) => {
+    images.forEach((imageData, index) => {
         const div = document.createElement('div');
         div.classList.add('gallery-item');
         // Stagger animation delay slightly for nice effect
@@ -40,8 +40,8 @@ function renderGallery(images) {
 
         const img = document.createElement('img');
         // Use thumbnail path for grid
-        img.src = `${CONFIG.thumbPath}${encodeURI(imgName)}`;
-        img.alt = imgName;
+        img.src = `${CONFIG.thumbPath}${encodeURI(imageData.filename)}`;
+        img.alt = imageData.description || imageData.filename;
         img.loading = "lazy";
 
         // Add click event for lightbox with index
@@ -50,6 +50,15 @@ function renderGallery(images) {
         });
 
         div.appendChild(img);
+
+        // Add description if present
+        if (imageData.description) {
+            const caption = document.createElement('p');
+            caption.classList.add('gallery-caption');
+            caption.textContent = imageData.description;
+            div.appendChild(caption);
+        }
+
         galleryContainer.appendChild(div);
     });
 }
@@ -57,6 +66,7 @@ function renderGallery(images) {
 // Lightbox Logic
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
+const lightboxDescription = document.getElementById('lightbox-description');
 const closeBtn = document.getElementById('close-lightbox');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
@@ -78,8 +88,17 @@ function updateLightboxImage() {
     if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
     if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
 
-    const imgName = galleryImages[currentImageIndex];
-    lightboxImg.src = `${CONFIG.fullPath}${encodeURI(imgName)}`;
+    const imageData = galleryImages[currentImageIndex];
+    lightboxImg.src = `${CONFIG.fullPath}${encodeURI(imageData.filename)}`;
+
+    // Update description
+    if (imageData.description) {
+        lightboxDescription.textContent = imageData.description;
+        lightboxDescription.style.display = 'block';
+    } else {
+        lightboxDescription.textContent = '';
+        lightboxDescription.style.display = 'none';
+    }
 }
 
 function closeLightbox() {
