@@ -1,63 +1,130 @@
 [
-  "PXL_20251020_224244082.RAW-01.jpg"
-,
-  "PXL_20251023_100743902.jpg"
-,
-  "PXL_20251023_115105910.jpg"
-,
-  "PXL_20251023_164030463.jpg"
-,
-  "PXL_20251024_135645713.jpg"
-,
-  "PXL_20251025_132918581 Copy Copy.jpg"
-,
-  "PXL_20251028_084220438~2.jpg"
-,
-  "PXL_20251028_103351023.jpg"
-,
-  "PXL_20251028_111252630.jpg"
-,
-  "PXL_20251028_111630037.jpg"
-,
-  "PXL_20251028_112941865~2.jpg"
-,
-  "PXL_20251029_121407876.jpg"
-,
-  "PXL_20251031_131726202.jpg"
-,
-  "PXL_20251031_133522971 Copy.jpg"
-,
-  "PXL_20251031_133555276.jpg"
-,
-  "PXL_20251102_105040583.PANO.jpg"
-,
-  "PXL_20251102_163930809.jpg"
-,
-  "PXL_20251103_185851176.jpg"
-,
-  "PXL_20251103_192457486.jpg"
-,
-  "PXL_20251112_014425893.NIGHT.jpg"
-,
-  "PXL_20251112_021910010.NIGHT.jpg"
-,
-  "PXL_20251112_022015235.NIGHT.jpg"
-,
-  "PXL_20251112_022213019.NIGHT.jpg"
-,
-  "PXL_20251112_022523067.NIGHT.jpg"
-,
-  "original_1c40cc91-497c-41be-90f2-d6821dc33546_PXL_20251023_093315700~2.jpg"
-,
-  "Budapest Parlament IMG_2161-topaz-sharpen.jpg"
-,
-  "Clementinum Baroque Library IMG_1036_Original Copy-topaz-sharpen.jpg"
-,
-  "IMG_1331.jpg"
-,
-  "IMG_1343.jpg"
-,
-  "IMG_1376.jpg"
-,
-  "IMG_2353.jpg"
+    {
+        "filename": "PXL_20251020_224244082.RAW-01.jpg",
+        "description": "Airport Lounge Lights"
+    },
+    {
+        "filename": "PXL_20251023_100743902.jpg",
+        "description": "View from Petrin Tower, Prague"
+    },
+    {
+        "filename": "PXL_20251023_115105910.jpg",
+        "description": "Strahov Monastery Brewery, Prague"
+    },
+    {
+        "filename": "PXL_20251023_164030463.jpg",
+        "description": "Church of Our Lady of Tyn, Prague"
+    },
+    {
+        "filename": "PXL_20251024_135645713.jpg",
+        "description": "Staircase at the House of the Black Madonna, Prague"
+    },
+    {
+        "filename": "PXL_20251025_132918581 Copy Copy.jpg",
+        "description": "Cathedral of St. Barabara, Kutna Hora"
+    },
+    {
+        "filename": "PXL_20251028_084220438~2.jpg",
+        "description": "Schloss Hellbrunn, Salzburg"
+    },
+    {
+        "filename": "PXL_20251028_103351023.jpg",
+        "description": "Drachebnwand (Dragobnwall), Mondsee (Moon Lake), Austria"
+    },
+    {
+        "filename": "PXL_20251028_111252630.jpg",
+        "description": "Hilfbergkirche (Pilgrimage Church), Mondsee (Moon Lake), Austria"
+    },
+    {
+        "filename": "PXL_20251028_111630037.jpg",
+        "description": "Tennengebirge (Tann Mountain), Mondsee (Moon Lake), Austria"
+    },
+    {
+        "filename": "PXL_20251028_112941865~2.jpg",
+        "description": "Tennengebirge (Tann Mountain), Mondsee (Moon Lake), Austria"
+    },
+    {
+        "filename": "PXL_20251029_121407876.jpg",
+        "description": "Flower arrangement at the Vienna State Opera, Austria"
+    },
+    {
+        "filename": "PXL_20251031_131726202.jpg",
+        "description": "Path at Schönbrunn Palace, Austria"
+    },
+    {
+        "filename": "PXL_20251031_133522971 Copy.jpg",
+        "description": "Path at Schönbrunn Palace, Austria"
+    },
+    {
+        "filename": "PXL_20251031_133555276.jpg",
+        "description": "Path at Schönbrunn Palace, Austria"
+    },
+    {
+        "filename": "PXL_20251102_083508044~2.jpg",
+        "description": "Sunday morning walk in Budapest"
+    },
+    {
+        "filename": "PXL_20251102_105040583.PANO.jpg",
+        "description": "Matthias Church, Buda Castle, Budapest"
+    },
+    {
+        "filename": "PXL_20251102_163930809.jpg",
+        "description": "Széchenyl Chain Bridge, Budapest"
+    },
+    {
+        "filename": "PXL_20251103_185851176.jpg",
+        "description": "National Athletics Centre, Budapest"
+    },
+    {
+        "filename": "PXL_20251103_192457486.jpg",
+        "description": "Liberty Bridge, Budapest"
+    },
+    {
+        "filename": "PXL_20251112_014425893.NIGHT.jpg",
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+    },
+    {
+        "filename": "PXL_20251112_021910010.NIGHT.jpg",
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+    },
+    {
+        "filename": "PXL_20251112_022015235.NIGHT.jpg",
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+    },
+    {
+        "filename": "PXL_20251112_022213019.NIGHT.jpg",
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+    },
+    {
+        "filename": "PXL_20251112_022523067.NIGHT.jpg",
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+    },
+    {
+        "filename": "original_1c40cc91-497c-41be-90f2-d6821dc33546_PXL_20251023_093315700~2.jpg",
+        "description": "The path up Petrin Tower, Prague"
+    },
+    {
+        "filename": "Budapest Parlament IMG_2161-topaz-sharpen.jpg",
+        "description": "Budapest Parliament Building"
+    },
+    {
+        "filename": "Clementinum Baroque Library IMG_1036_Original Copy-topaz-sharpen.jpg",
+        "description": "Baroque Library in the Clementinum, Prague"
+    },
+    {
+        "filename": "IMG_1331.jpg",
+        "description": "Česky Krumlov, Czech Republic"
+    },
+    {
+        "filename": "IMG_1343.jpg",
+        "description": "Česky Krumlov, Czech Republic"
+    },
+    {
+        "filename": "IMG_1376.jpg",
+        "description": "Česky Krumlov, Czech Republic"
+    },
+    {
+        "filename": "IMG_2353.jpg",
+        "description": "Budapest Parliament Building"
+    }
 ]

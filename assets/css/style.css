@@ -53,7 +53,26 @@ body {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
+}
+
+/* Gallery Caption */
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
 }
 
 /* Dim other items on hover (if device supports hover) */
@@ -114,9 +133,19 @@ body {
     pointer-events: auto;
 }
 
+/* Lightbox Wrapper */
+.lightbox-wrapper {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
 .lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transform: scale(0.9);
@@ -125,6 +154,19 @@ body {
 
 .lightbox.active .lightbox-content {
     transform: scale(1);
+}
+
+.lightbox-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    line-height: 1.5;
 }
 
 .close {
@@ -179,6 +221,11 @@ body {
     .nav-btn {
         font-size: 2rem;
         padding: 0 0.5rem;
+    }
+
+    .lightbox-description {
+        font-size: 0.875rem;
+        padding: 1rem 0.75rem;
     }
 }
 
