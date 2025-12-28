@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Slideshow Example</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-  </head>
-  <body>
-    <div class="slideshow">
-      <div><img src="20230205_093724_Original.jpg"></div>
-      <div><img src="photos//photo2.jpg"></div>
-      <div><img src="photos//photo3.jpg"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visuals & Moments</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="slideshow" id="slideshow">
+        <!-- Slides will be injected here -->
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('.slideshow').slick();
-      });
-    </script>
-  </body>
+
+    <div class="overlay">
+        <header class="glass-panel">
+            <h1>Gallery</h1>
+            <p>A collection of moments.</p>
+        </header>
+        
+        <div class="controls glass-panel">
+            <button id="prevBtn" aria-label="Previous Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button id="toggleBtn" aria-label="Pause Slideshow">
+                <svg id="pauseIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                <svg id="playIcon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+            <button id="nextBtn" aria-label="Next Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
 </html>
