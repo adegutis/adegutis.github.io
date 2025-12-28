@@ -17,6 +17,9 @@ async function init() {
             return;
         }
 
+        // Randomize order
+        shuffleArray(images);
+
         renderGallery(images);
 
     } catch (error) {
@@ -80,11 +83,45 @@ lightbox.addEventListener('click', (e) => {
 });
 
 // Close on Escape key
+// Close on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) {
         closeLightbox();
     }
 });
 
+// Quotes Logic
+const quotes = [
+    { text: "Don't Panic.", author: "Douglas Adams, The Hitchhiker’s Guide to the Galaxy" },
+    { text: "You may not feel outstandingly robust, but if you are an average-sized adult you will contain within your modest frame no less than 7 X 10^18 joules of potential energy—enough to explode with the force of thirty very large hydrogen bombs, assuming you knew how to liberate it and really wished to make a point.", author: "Bill Bryson, A Short History of Nearly Everything" },
+    { text: "Life just wants to be; but it doesn't want to be much.", author: "Bill Bryson, A Short History of Nearly Everything" },
+    { text: "Never be cruel, never be cowardly. And if you ever are, always make amends.", author: "The Doctor" },
+    { text: "Hate is always foolish, and love is always wise.", author: "The Doctor" },
+    { text: "The universe is big. It's vast and complicated and ridiculous. And sometimes, very rarely, impossible things just happen and we call them miracles.", author: "The Doctor" },
+    { text: "There's no point in being grown-up if you can't be childish sometimes.", author: "The Doctor" },
+    { text: "We're all stories, in the end. Just make it a good one, eh?", author: "The Doctor" }
+];
+
+function displayRandomQuote() {
+    const quoteElement = document.getElementById('quote-text');
+    const authorElement = document.getElementById('quote-author');
+
+    if (quoteElement && authorElement) {
+        // Pick random quote
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteElement.innerText = `"${randomQuote.text}"`;
+        authorElement.innerText = `— ${randomQuote.author}`;
+    }
+}
+
 // Start
 init();
+displayRandomQuote();
+
+// Fisher-Yates Shuffle
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
