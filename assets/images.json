@@ -1,130 +1,252 @@
 [
     {
         "filename": "PXL_20251020_224244082.RAW-01.jpg",
-        "description": "Airport Lounge Lights"
+        "description": "Airport Lounge Lights",
+        "albums": [
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251023_100743902.jpg",
-        "description": "View from Petrin Tower, Prague"
+        "description": "View from Petrin Tower, Prague",
+        "albums": [
+            "Prague",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251023_115105910.jpg",
-        "description": "Strahov Monastery Brewery, Prague"
+        "description": "Strahov Monastery Brewery, Prague",
+        "albums": [
+            "Prague",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251023_164030463.jpg",
-        "description": "Church of Our Lady of Tyn, Prague"
+        "description": "Church of Our Lady of Tyn, Prague",
+        "albums": [
+            "Prague",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251024_135645713.jpg",
-        "description": "Staircase at the House of the Black Madonna, Prague"
+        "description": "Staircase at the House of the Black Madonna, Prague",
+        "albums": [
+            "Prague",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251025_132918581 Copy Copy.jpg",
-        "description": "Cathedral of St. Barabara, Kutna Hora"
+        "description": "Cathedral of St. Barabara, Kutna Hora",
+        "albums": [
+            "Czech Republic",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251028_084220438~2.jpg",
-        "description": "Schloss Hellbrunn, Salzburg"
+        "description": "Schloss Hellbrunn, Salzburg",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251028_103351023.jpg",
-        "description": "Drachebnwand (Dragobnwall), Mondsee (Moon Lake), Austria"
+        "description": "Drachebnwand (Dragobnwall), Mondsee (Moon Lake), Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251028_111252630.jpg",
-        "description": "Hilfbergkirche (Pilgrimage Church), Mondsee (Moon Lake), Austria"
+        "description": "Hilfbergkirche (Pilgrimage Church), Mondsee (Moon Lake), Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251028_111630037.jpg",
-        "description": "Tennengebirge (Tann Mountain), Mondsee (Moon Lake), Austria"
+        "description": "Tennengebirge (Tann Mountain), Mondsee (Moon Lake), Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251028_112941865~2.jpg",
-        "description": "Tennengebirge (Tann Mountain), Mondsee (Moon Lake), Austria"
+        "description": "Tennengebirge (Tann Mountain), Mondsee (Moon Lake), Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251029_121407876.jpg",
-        "description": "Flower arrangement at the Vienna State Opera, Austria"
+        "description": "Flower arrangement at the Vienna State Opera, Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251031_131726202.jpg",
-        "description": "Path at Schönbrunn Palace, Austria"
+        "description": "Path at Schönbrunn Palace, Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251031_133522971 Copy.jpg",
-        "description": "Path at Schönbrunn Palace, Austria"
+        "description": "Path at Schönbrunn Palace, Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251031_133555276.jpg",
-        "description": "Path at Schönbrunn Palace, Austria"
+        "description": "Path at Schönbrunn Palace, Austria",
+        "albums": [
+            "Austria",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251102_083508044~2.jpg",
-        "description": "Sunday morning walk in Budapest"
+        "description": "Sunday morning walk in Budapest",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251102_105040583.PANO.jpg",
-        "description": "Matthias Church, Buda Castle, Budapest"
+        "description": "Matthias Church, Buda Castle, Budapest",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251102_163930809.jpg",
-        "description": "Széchenyl Chain Bridge, Budapest"
+        "description": "Széchenyl Chain Bridge, Budapest",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251103_185851176.jpg",
-        "description": "National Athletics Centre, Budapest"
+        "description": "National Athletics Centre, Budapest",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251103_192457486.jpg",
-        "description": "Liberty Bridge, Budapest"
+        "description": "Liberty Bridge, Budapest",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "PXL_20251112_014425893.NIGHT.jpg",
-        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025",
+        "albums": [
+            "Northern Lights"
+        ]
     },
     {
         "filename": "PXL_20251112_021910010.NIGHT.jpg",
-        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025",
+        "albums": [
+            "Northern Lights"
+        ]
     },
     {
         "filename": "PXL_20251112_022015235.NIGHT.jpg",
-        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025",
+        "albums": [
+            "Northern Lights"
+        ]
     },
     {
         "filename": "PXL_20251112_022213019.NIGHT.jpg",
-        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025",
+        "albums": [
+            "Northern Lights"
+        ]
     },
     {
         "filename": "PXL_20251112_022523067.NIGHT.jpg",
-        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025"
+        "description": "Northern Lights, Woodstock, IL - Nov 12, 2025",
+        "albums": [
+            "Northern Lights"
+        ]
     },
     {
         "filename": "original_1c40cc91-497c-41be-90f2-d6821dc33546_PXL_20251023_093315700~2.jpg",
-        "description": "The path up Petrin Tower, Prague"
+        "description": "The path up Petrin Tower, Prague",
+        "albums": [
+            "Prague",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "Budapest Parlament IMG_2161-topaz-sharpen.jpg",
-        "description": "Budapest Parliament Building"
+        "description": "Budapest Parliament Building",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "Clementinum Baroque Library IMG_1036_Original Copy-topaz-sharpen.jpg",
-        "description": "Baroque Library in the Clementinum, Prague"
+        "description": "Baroque Library in the Clementinum, Prague",
+        "albums": [
+            "Prague",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "IMG_1331.jpg",
-        "description": "Česky Krumlov, Czech Republic"
+        "description": "Česky Krumlov, Czech Republic",
+        "albums": [
+            "Czech Republic",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "IMG_1343.jpg",
-        "description": "Česky Krumlov, Czech Republic"
+        "description": "Česky Krumlov, Czech Republic",
+        "albums": [
+            "Czech Republic",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "IMG_1376.jpg",
-        "description": "Česky Krumlov, Czech Republic"
+        "description": "Česky Krumlov, Czech Republic",
+        "albums": [
+            "Czech Republic",
+            "2025 Central Europe"
+        ]
     },
     {
         "filename": "IMG_2353.jpg",
-        "description": "Budapest Parliament Building"
+        "description": "Budapest Parliament Building",
+        "albums": [
+            "Budapest",
+            "2025 Central Europe"
+        ]
     }
 ]
