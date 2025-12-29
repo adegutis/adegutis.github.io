@@ -26,12 +26,22 @@
         </div>
     </header>
 
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search photos..." aria-label="Search photos by description">
-    </div>
+    <div class="page-layout">
+        <aside class="sidebar" id="sidebar">
+            <h2>Albums</h2>
+            <ul class="album-list" id="album-list">
+                <!-- Populated by JS -->
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search photos..." aria-label="Search photos by description">
+            </div>
 
-    <div class="gallery" id="gallery">
-        <!-- Images will be injected here -->
+            <div class="gallery" id="gallery">
+                <!-- Images will be injected here -->
+            </div>
+        </main>
     </div>
 
     <!-- Lightbox Modal -->

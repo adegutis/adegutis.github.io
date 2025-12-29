@@ -6,7 +6,9 @@ const CONFIG = {
 
 const galleryContainer = document.getElementById('gallery');
 const searchInput = document.getElementById('search-input');
+const albumList = document.getElementById('album-list');
 let allImages = []; // Store all images for filtering
+let currentAlbum = 'all'; // Track selected album
 
 async function init() {
     try {
@@ -26,6 +28,10 @@ async function init() {
         allImages = images;
 
         renderGallery(images);
+
+        // Setup album sidebar
+        const albums = extractAlbums(images);
+        renderAlbumSidebar(albums);
 
         // Setup search
         setupSearch();
@@ -197,31 +203,83 @@ function displayRandomQuote() {
     }
 }
 
+// Album Logic
+function extractAlbums(images) {
+    const albumSet = new Set();
+    images.forEach(img => {
+        if (img.albums && img.albums.length > 0) {
+            img.albums.forEach(album => albumSet.add(album));
+        }
+    });
+    return Array.from(albumSet).sort();
+}
+
+function renderAlbumSidebar(albums) {
+    albumList.innerHTML = '';
+
+    // Add "All" option
+    const allItem = document.createElement('li');
+    allItem.textContent = 'All Photos';
+    allItem.classList.add('album-item', 'active');
+    allItem.dataset.album = 'all';
+    allItem.addEventListener('click', () => selectAlbum('all'));
+    albumList.appendChild(allItem);
+
+    // Add each album
+    albums.forEach(album => {
+        const li = document.createElement('li');
+        li.textContent = album;
+        li.classList.add('album-item');
+        li.dataset.album = album;
+        li.addEventListener('click', () => selectAlbum(album));
+        albumList.appendChild(li);
+    });
+}
+
+function selectAlbum(album) {
+    currentAlbum = album;
+
+    // Update active state
+    document.querySelectorAll('.album-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.album === album);
+    });
+
+    // Re-filter with current search term
+    applyFilters();
+}
+
 // Search/Filter Logic
 function setupSearch() {
     let debounceTimer;
     searchInput.addEventListener('input', (e) => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
-            filterGallery(e.target.value);
+            applyFilters();
         }, 300);
     });
 }
 
-function filterGallery(searchTerm) {
-    const term = searchTerm.toLowerCase().trim();
+function applyFilters() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
 
-    if (!term) {
-        renderGallery(allImages);
-        return;
+    let filtered = allImages;
+
+    // Filter by album
+    if (currentAlbum !== 'all') {
+        filtered = filtered.filter(img =>
+            img.albums && img.albums.includes(currentAlbum)
+        );
     }
 
-    const filtered = allImages.filter(img =>
-        img.description && img.description.toLowerCase().includes(term)
-    );
+    // Filter by search term
+    if (searchTerm) {
+        filtered = filtered.filter(img =>
+            img.description && img.description.toLowerCase().includes(searchTerm)
+        );
+    }
 
     if (filtered.length === 0) {
-        galleryContainer.innerHTML = '<p class="no-results">No photos match your search.</p>';
+        galleryContainer.innerHTML = '<p class="no-results">No photos match your filters.</p>';
         galleryImages = [];
     } else {
         renderGallery(filtered);
