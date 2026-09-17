@@ -416,5 +416,52 @@
         "albums": [
             "2025 Utah"
         ]
+    },
+    {
+        "filename": "DSC01989 Boston Light.jpg",
+        "description": "Boston Light, Little Brewster Island",
+        "albums": [
+            "2026 Boston"
+        ]
+    },
+    {
+        "filename": "DSC02201 Anvil Anvil26-calf.jpg",
+        "description": "Humpback whale Anvil surfacing with her calf",
+        "albums": [
+            "Whale Watching",
+            "2026 Boston"
+        ]
+    },
+    {
+        "filename": "whale tail DSC02341.jpg",
+        "description": "Humpback whale tail, Stellwagen Bank",
+        "albums": [
+            "Whale Watching",
+            "2026 Boston"
+        ]
+    },
+    {
+        "filename": "DSC02363 whale tail.jpg",
+        "description": "Humpback whale tail, Stellwagen Bank",
+        "albums": [
+            "Whale Watching",
+            "2026 Boston"
+        ]
+    },
+    {
+        "filename": "DSC02428-crop.jpg",
+        "description": "Humpback whale breaching",
+        "albums": [
+            "Whale Watching",
+            "2026 Boston"
+        ]
+    },
+    {
+        "filename": "Anvil26-calf breach DSC02421-2432.gif",
+        "description": "Anvil's calf breaching, Boston Whale Watching",
+        "albums": [
+            "Whale Watching",
+            "2026 Boston"
+        ]
     }
 ]
